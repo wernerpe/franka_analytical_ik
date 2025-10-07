@@ -32,7 +32,11 @@ py_package(
 
 # Wheel distribution
 py_wheel(
-    name = "franka_ik_wheel",
+
+
+## WHEEL BUILDING IS STILL BROKEN YOU NEED TO MAKE A FOLDER THAT CONTAINS ALL THE CORRECT STUFF LIKE IN CSDECOMP ALSO GENERATE THE PYSTUBS.
+
+    name,, = "franka_ik_wheel",
     distribution = "franka_analytical_ik",
     version = "1.0.0",
     deps = [":franka_ik_package"],
