@@ -1,0 +1,15 @@
+module(
+    name = "franka_analytical_ik",
+    version = "1.0.0",
+)
+
+bazel_dep(name = "rules_cc", version = "0.0.16")
+bazel_dep(name = "rules_python", version = "0.40.0")
+bazel_dep(name = "eigen", version= "3.4.0")
+bazel_dep(name = "pybind11_bazel", version = "2.13.6")
+bazel_dep(name = "platforms", version = "0.0.7")
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+
+# This version configures the Python version that's compatible with the binding
+python.toolchain(python_version = "3.10")
+use_repo(python, "python_versions")

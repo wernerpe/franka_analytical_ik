@@ -1,5 +1,9 @@
 # An analytical Inverse Kinematics (IK) solver for Franka Emika Panda
 
+Note from Pete: This branch implements simple python bindings ontop of the original repo this was forked from.
+Instructions are AI-generated so there might be mistakes 😇
+
+
 You can support this project by referencing our paper:
 ```
 @InProceedings{HeLiu2021,
