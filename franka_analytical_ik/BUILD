@@ -15,38 +15,23 @@ pybind_extension(
     name = "_franka_ik",
     srcs = ["franka_analytic_ik_bindings.cpp"],
     deps = [":franka_ik_lib"],
+    visibility = ["//visibility:public"],
 )
 
 # Python package
 py_library(
-    name = "franka_ik_pylib",
-    srcs = ["__init__.py"],
-    deps = ["_franka_ik"],
-    imports = [".."],
-)
-
-py_package(
     name = "franka_ik_package",
-    deps = [":franka_ik_pylib"],
+    srcs = ["__init__.py",
+            "__init__.pyi",  # Type stubs
+    ],
+    deps = ["_franka_ik"],
+    imports = ["."],
+    visibility = ["//visibility:public"],
 )
 
+# py_package(
+#     name = "franka_ik_package",
+#     deps = [":franka_ik_pylib"],
+#     visibility = ["//visibility:public"],
+# )
 # Wheel distribution
-py_wheel(
-
-
-## WHEEL BUILDING IS STILL BROKEN YOU NEED TO MAKE A FOLDER THAT CONTAINS ALL THE CORRECT STUFF LIKE IN CSDECOMP ALSO GENERATE THE PYSTUBS.
-
-    name,, = "franka_ik_wheel",
-    distribution = "franka_analytical_ik",
-    version = "1.0.0",
-    deps = [":franka_ik_package"],
-    platform = select({
-        "@platforms//os:linux": "manylinux2014_x86_64",
-    }),
-    python_tag = "cp310",
-    author = "Yanhao He, Steven Liu, and Peter Werner",
-    author_email = "",
-    homepage = "https://github.com/wernerpe/franka_analytical_ik",
-    license = "MIT",
- 
-)
