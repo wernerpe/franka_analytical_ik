@@ -6,7 +6,7 @@ set -e
 echo "Building Franka Analytical IK wheel..."
 
 # Build the wheel
-bazel build //src:franka_ik_wheel
+bazel build //franka_analytical_ik:franka_ik_wheel
 
 # Find the wheel file
 WHEEL_PATH=$(bazel cquery --output=files //src:franka_ik_wheel 2>/dev/null)

@@ -44,8 +44,5 @@ py_wheel(
     author_email = "",
     homepage = "https://github.com/wernerpe/franka_analytical_ik",
     license = "MIT",
-    strip_path_prefixes = [
-        "src/",  # Adjust this path to match your project structure
-    ],
  
 )
