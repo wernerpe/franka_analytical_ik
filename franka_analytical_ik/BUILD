@@ -22,8 +22,8 @@ pybind_extension(
 py_library(
     name = "franka_ik_package",
     srcs = ["__init__.py",
-            "__init__.pyi",  # Type stubs
     ],
+    data = ["_franka_ik.pyi"],
     deps = ["_franka_ik"],
     imports = ["."],
     visibility = ["//visibility:public"],

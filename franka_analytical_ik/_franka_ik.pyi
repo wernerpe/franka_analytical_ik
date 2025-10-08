@@ -8,8 +8,6 @@ from typing import List
 import numpy as np
 import numpy.typing as npt
 
-__version__: str
-
 def solve_ik(
     O_T_EE_array: npt.NDArray[np.float64],
     q7: float,
@@ -116,5 +114,3 @@ def solve_ik_cc(
     - Assumes Franka Hand is installed (d7e = 0.2104m)
     """
     ...
-
-__all__ = ['solve_ik', 'solve_ik_cc', '__version__']
