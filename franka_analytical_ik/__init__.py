@@ -46,7 +46,7 @@ def SolveIK(X_W_EE : np.ndarray,
     assert X_W_EE.shape[0] == 4
     X_W_EE_internal = X_W_EE.copy()
     #remove the hand offset
-    X_W_EE_internal[2,3] = X_W_EE_internal[2,3]-0.1034
+    X_W_EE_internal[2,3] = X_W_EE_internal[2,3]+0.1034
     O_T_EE_flat = X_W_EE_internal.flatten('F')
     solutions = _franka_ik.solve_ik(O_T_EE_flat, q_redundancy, q_current)
     return solutions
@@ -82,7 +82,7 @@ def SolveIKCC(X_W_EE : np.ndarray,
     assert X_W_EE.shape[0] == 4
     X_W_EE_internal = X_W_EE.copy()
     #remove the hand offset
-    X_W_EE_internal[2,3] = X_W_EE_internal[2,3]-0.1034
+    X_W_EE_internal[2,3] = X_W_EE_internal[2,3] + 0.1034
     O_T_EE_flat = X_W_EE_internal.flatten('F')
     solution = _franka_ik.solve_ik_cc(O_T_EE_flat, q_redundancy, q_current)
     return solution
