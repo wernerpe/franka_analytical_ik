@@ -9,7 +9,7 @@ import numpy as np
 import sys
 
 # Add the bazel build output to path for testing
-sys.path.insert(0, 'bazel-bin/src')
+sys.path.insert(0, 'bazel-bin/franka_analytical_ik')
 
 try:
     from _franka_ik import solve_ik, solve_ik_cc
@@ -17,7 +17,7 @@ try:
 except ImportError as e:
     print(f"✗ Failed to import: {e}")
     print("\nMake sure you've built the extension with:")
-    print("  bazel build //src:_franka_ik")
+    print("  bazel build //franka_analytical_ik:_franka_ik")
     sys.exit(1)
 
 def test_with_real_data():
